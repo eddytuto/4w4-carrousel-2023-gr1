@@ -1,14 +1,15 @@
 .carrousel {
+  position: fixed;
   width: 50%;
   height: 50%;
-  position: fixed;
-  left: 25%;
   top: 25%;
+  left: 25%;
+  border: 1px solid #444;
+  background-color: aquamarine;
   transform: scale(0);
   transition: transform 0.5s;
-  background-color: beige;
 }
 
-.carrousel--ouvrir {
+.carrousel--activer {
   transform: scale(1);
 }/*# sourceMappingURL=style.css.map */
