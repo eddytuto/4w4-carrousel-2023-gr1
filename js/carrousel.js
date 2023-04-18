@@ -23,6 +23,11 @@ bouton.addEventListener('mousedown', function(){
     carrousel.classList.add('carrousel--activer')
     ajouter_img_dans_carrousel()
 
+    /* https://developer.mozilla.org/en-US/docs/Web/API/Element/classList 
+    
+    propriété clasList.contain('carrousel--activer') permet de vérifier si  le carrousel est ouvert
+    */
+
 })
 /* ----------------------------------------------------  fermer boîte modale */
 carrousel__x.addEventListener('mousedown', function(){
@@ -88,10 +93,6 @@ function  creation_radio_carrousel(){
 
 function afficher_image(index){
 
-  if (ancien_index != -1){
-   // carrousel__figure.children[ancien_index].style.opacity = 0  
-   carrousel__figure.children[ancien_index].classList.remove('carrousel__img--activer')
-  }
   // carrousel__figure.children[index].style.opacity = 1
   carrousel__figure.children[index].classList.add('carrousel__img--activer')
   ancien_index = index
