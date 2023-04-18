@@ -1,5 +1,5 @@
 .carrousel {
-  position: fixed;
+  position: absolute;
   width: 50%;
   height: 50%;
   top: 25%;
@@ -10,6 +10,45 @@
   transition: transform 0.5s;
 }
 
+.carrousel__x {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 3;
+}
+
+.carrousel__figure {
+  width: 100%;
+  height: 100%;
+}
+
+.carrousel__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.carrousel__img--activer {
+  opacity: 1;
+}
+
 .carrousel--activer {
   transform: scale(1);
+}
+
+.carrousel__form {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.carrousel__rad {
+  display: inline-block;
+  margin: 5px;
 }/*# sourceMappingURL=style.css.map */
