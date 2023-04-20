@@ -10,4 +10,4 @@
 
 ### Barème 
 - Github: 10 commits, readme, lien vers votre site siteground, messages préfixés explicites (2 points)
-- Fonctionnalités (3 points)
+- Fonctionnalités et design (3 points)
