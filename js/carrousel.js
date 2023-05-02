@@ -13,8 +13,8 @@ let galerie__img = galerie.querySelectorAll("img")
 // console.log("galerie__img: " + galerie__img.length)
 // console.log(carrousel.tagName)
 /* ------------------------------------------ positionnement de l'image active du carrousel */
-let index = 0
-let ancien_index = -1
+let index = 0 // permet d'identifier l'image courante du carrousel
+let ancien_index = -1 // permet d'identidier l'image précédente
 let position = 0 // permet d'indexer les image de la galerie et 
 
 /* ----------------------------------------------------  ouvrir boîte modale */
@@ -48,8 +48,8 @@ function ajouter_img_dans_carrousel()
   for (const elm of galerie__img)
   {
     elm.dataset.index = position
-    elm.addEventListener('mousedown',function(){
-      index = this.dataset.index
+    elm.addEventListener('mousedown',function(e){
+      index = e.target.dataset.index
       afficher_image(index)
       console.log(index)
     })
@@ -84,9 +84,9 @@ function  creation_radio_carrousel(){
   // position += 1
   // position++
   carrousel__form.appendChild(rad)
-  rad.addEventListener('mousedown', function(){
-    console.log(this.dataset.index)
-    index = this.dataset.index
+  rad.addEventListener('mousedown', function(e){
+    console.log(e.target.dataset.index)
+    index = e.target.dataset.index
     afficher_image(index)
   })
 }
