@@ -6,6 +6,7 @@ let carrousel__x = document.querySelector(".carrousel__x")
 let carrousel__figure = document.querySelector(".carrousel__figure")
 let carrousel__form = document.querySelector(".carrousel__form")
 let carrousel__precedent = document.querySelector(".carrousel__precedent")
+console.log("carrousel__precedent= "+carrousel__precedent.tagName)
 let carrousel__suivant = document.querySelector(".carrousel__suivant")
 console.log(carrousel__form.tagName)
 /* -------------------------------------------------------- Variable de la galerie */
@@ -39,7 +40,7 @@ carrousel__precedent.addEventListener('mousedown', function(){
  * navigation dans le carrousel avec le bouton suivant: carrousel__suivant
  */
 carrousel__suivant.addEventListener('mousedown', function(){
-  index =  index+1
+  index =  parseInt(index)+1
   if(index==galerie__img.length)
   {
     index = 0;
@@ -91,7 +92,9 @@ function creation_img_carrousel(elm){
       let longueur = elm.src.length-12
 
      // let extension  =  elm.src.substr(0,-4)
-       img.src = elm.src.substr(0,longueur) + ".jpg"
+      extension = elm.src.substr(elm.src.lastIndexOf('.'),4)
+      console.log("extension="+extension)
+       img.src = elm.src.substr(0,longueur) + extension
        img.classList.add('carrousel__img')
        //console.log (img.getAttribute('src'))
        carrousel__figure.appendChild(img)
@@ -140,13 +143,13 @@ function redimensionner_carrousel(){
   const windowWidth = window.innerWidth
   const windowHeight = window.innerHeight
 
-  let carrouselWidth = windowWidth 
+  let carrouselHeight = windowHeight 
   if (windowWidth > 1000)
   {
-    carrouselWidth = windowWidth - windowWidth/2
+    carrouselHeight = windowHeight - windowHeight/3
   }
 
-  let carrouselHeight = carrouselWidth * imageHeight/imageWidth
+  let carrouselWidth = carrouselHeight * imageWidth/imageHeight
 
   carrousel.style.width = `${carrouselWidth}px`
   carrousel.style.height = `${carrouselHeight}px`
